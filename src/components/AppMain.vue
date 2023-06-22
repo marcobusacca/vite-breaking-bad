@@ -1,12 +1,21 @@
 <!-- JAVASCRIPT & VUE.JS -->
 <script>
-export default {
+// IMPORTO APP_POKEMON_CARD
+import AppPokemonCard from './AppPokemonCard.vue';
 
+export default {
+    // OGGETTO COMPONENTS
+    components: {
+        // DICHIARO APP_POKEMON_CARD
+        AppPokemonCard
+    }
 }
 </script>
 
 <!-- TEMPLATE HTML -->
 <template lang="">
+    AppMain
+    <AppPokemonCard/>
 </template>
 
 <!-- STYLE SCSS -->
