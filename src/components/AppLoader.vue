@@ -10,7 +10,7 @@ export default {
     <!-- Loader Container -->
     <div class="loader-wrapper">
         <!-- Loader Image -->
-        <img src="../../public/pokemon-icon.svg" alt="pokemon-icon">
+        <img src="/pokemon-icon.svg" alt="pokemon-icon">
     </div>
 </template>
 
