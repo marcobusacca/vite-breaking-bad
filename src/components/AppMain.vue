@@ -14,7 +14,9 @@ export default {
 
 <!-- TEMPLATE HTML -->
 <template lang="">
-    <AppPokemonCard/>
+    <main>
+        <AppPokemonCard/>
+    </main>
 </template>
 
 <!-- STYLE SCSS -->
