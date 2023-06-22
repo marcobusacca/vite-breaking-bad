@@ -58,7 +58,6 @@ export default {
             margin: 20px 10px;
             height: 250px;
             border-radius: 15px;
-            background-color: yellow;
         }
 
         .bg-green {

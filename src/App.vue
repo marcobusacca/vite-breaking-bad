@@ -32,7 +32,6 @@ export default {
         axios.get('https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons').then((result) => {
             // INSERISCO L'ARRAY DI OGGETTI DENTRO STORE.JS
             store.pokemonList = result.data.docs;
-            console.log(store.pokemonList)
         })
     },
 }
