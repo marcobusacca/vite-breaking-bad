@@ -3,6 +3,9 @@
 // IMPORTO APP_POKEMON_CARD
 import AppPokemonCard from './AppPokemonCard.vue';
 
+// IMPORTO APP_LOADER
+import AppLoader from './AppLoader.vue';
+
 // IMPORTO STORE.JS
 import { store } from '../store.js';
 
@@ -10,7 +13,10 @@ export default {
     // OGGETTO COMPONENTS
     components: {
         // DICHIARO APP_POKEMON_CARD
-        AppPokemonCard
+        AppPokemonCard,
+
+        // DICHIARO APP_LOADER
+        AppLoader
     },
     data() {
         return {
@@ -27,11 +33,15 @@ export default {
         <!-- Main Container -->
         <div class="container main-container">
             <!-- Main Row -->
-            <div class="row main-row">
+            <div class="row main-row" v-if="store.loading === false">
                 <!-- Main Col -->
                 <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class=" pokemon.type1 === 'Grass' ? 'bg-grass' : pokemon.type1 === 'Fire' ? 'bg-fire' : pokemon.type1 === 'Water' ? 'bg-water' : '' ">
                     <AppPokemonCard :pokemon="pokemon"/>
                 </div>
+            </div>
+            <!-- Main Row -->
+            <div class="row loader-row" v-else>
+                <AppLoader/>
             </div>
         </div>
     </main>
@@ -51,9 +61,8 @@ export default {
     align-items: center;
 
     .main-row {
-        background-color: #4B5156;
         width: 100%;
-        height: 100%;
+        background-color: #4B5156;
         overflow-y: scroll;
 
         .main-col {
@@ -73,6 +82,11 @@ export default {
         .bg-water {
             background-color: $WaterColor;
         }
+    }
+
+    .loader-row {
+        width: 100%;
+        background: linear-gradient(115deg, rgba(0, 0, 0, 0.788) 0%, rgba(75, 81, 86, 1) 100%);
     }
 }
 </style>
