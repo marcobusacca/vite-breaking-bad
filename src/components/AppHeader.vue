@@ -10,4 +10,7 @@ export default {
 </template>
 
 <!-- STYLE SCSS -->
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+// IMPORTO VARIABLES.SCSS
+@use '../styles/partials/variables' as *;
+</style>

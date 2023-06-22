@@ -28,4 +28,7 @@ export default {
 </template>
 
 <!-- STYLE SCSS -->
-<style lang="scss"></style>
+<style lang="scss">
+// IMPORTO GENERALS.SCSS
+@use './styles/generals.scss' as *;
+</style>
