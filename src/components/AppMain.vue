@@ -24,10 +24,13 @@ export default {
 <!-- TEMPLATE HTML -->
 <template lang="">
     <main>
+        <!-- Main Container -->
         <div class="container main-container">
+            <!-- Main Row -->
             <div class="row main-row">
+                <!-- Main Col -->
                 <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class=" pokemon.type1 === 'Grass' ? 'bg-green' : pokemon.type1 === 'Fire' ? 'bg-red' : pokemon.type1 === 'Water' ? 'bg-blue' : '' ">
-                    <AppPokemonCard/>
+                    <AppPokemonCard :pokemon="pokemon"/>
                 </div>
             </div>
         </div>
@@ -56,7 +59,6 @@ export default {
         .main-col {
             width: calc(100% / 5 - 20px);
             margin: 20px 10px;
-            height: 250px;
             border-radius: 15px;
         }
 
