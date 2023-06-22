@@ -7,7 +7,6 @@ export default {
 
 <!-- TEMPLATE HTML -->
 <template lang="">
-    AppHeader
 </template>
 
 <!-- STYLE SCSS -->
