@@ -29,7 +29,7 @@ export default {
             <!-- Main Row -->
             <div class="row main-row">
                 <!-- Main Col -->
-                <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class=" pokemon.type1 === 'Grass' ? 'bg-green' : pokemon.type1 === 'Fire' ? 'bg-red' : pokemon.type1 === 'Water' ? 'bg-blue' : '' ">
+                <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class=" pokemon.type1 === 'Grass' ? 'bg-grass' : pokemon.type1 === 'Fire' ? 'bg-fire' : pokemon.type1 === 'Water' ? 'bg-water' : '' ">
                     <AppPokemonCard :pokemon="pokemon"/>
                 </div>
             </div>
@@ -62,16 +62,16 @@ export default {
             border-radius: 15px;
         }
 
-        .bg-green {
-            background-color: #DEFDE0;
+        .bg-grass {
+            background-color: $GrassColor;
         }
 
-        .bg-red {
-            background-color: #FDDFDF;
+        .bg-fire {
+            background-color: $FireColor;
         }
 
-        .bg-blue {
-            background-color: #DEF3FD;
+        .bg-water {
+            background-color: $WaterColor;
         }
     }
 }
