@@ -3,6 +3,11 @@
 export default {
     props: {
         pokemon: Object
+    },
+    computed: {
+        UpperCasePokemon() {
+            return this.pokemon.name.toUpperCase();
+        }
     }
 }
 </script>
@@ -19,7 +24,7 @@ export default {
         </div>
         <!-- Card Name -->
         <div class="card-name">
-            <h1 v-text="pokemon.name" class="fs-5 fw-bold"></h1>
+            <h1 v-text="UpperCasePokemon" class="fs-5 fw-bold"></h1>
         </div>
         <!-- Card Type -->
         <div class="card-type">
