@@ -40,17 +40,11 @@ export default {
             store.pokemonTypeList = result.data;
         });
 
-        // CHIAMATA API POKEMONS
-        axios.get(store.apiUrl).then((result) => {
-            // INSERISCO L'ARRAY DI OGGETTI DENTRO STORE.JS
-            store.pokemonList = result.data.docs;
-
-            // APPENA LA CHIAMATA API è STATA COMPLETATA, SETTO LA VARIABILE LOADING SU FALSE
-            store.loading = false;
-        })
+        // RICHIAMO LA FUNZIONE GET_POKEMON PER LA CHIAMATA API POKEMONS
+        this.getPokemon();
     },
     methods: {
-        getPokemonType() {
+        getPokemon() {
             // RECUPERO L'URL DELLA CHIAMATA API POKEMONS
             let myUrl = store.apiUrl;
 
@@ -79,7 +73,7 @@ export default {
         <div class="container my-5">
             <div class="row">
                 <AppHeader/>
-                <AppSelect @filter="getPokemonType"/>
+                <AppSelect @filter="getPokemon"/>
             </div>
         </div>  
     </header>
