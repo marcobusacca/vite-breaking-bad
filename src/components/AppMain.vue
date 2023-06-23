@@ -244,6 +244,7 @@ export default {
 
         .bg-ghost {
             background-color: $GhostColor;
+            color: #fff;
         }
 
         .bg-ground {
