@@ -58,7 +58,7 @@ export default {
             if (store.typeSelected !== 'All') {
 
                 // INSERISCO IL FILTRAGGIO SCELTO DALL'UTENTE NELL'URL DELLA CHIAMATA API POKEMONS
-                myUrl += `?eq[type1]=${store.typeSelected}`
+                myUrl += `?eq[type1]=${store.typeSelected}`;
             }
             // CHIAMATA API POKEMONS
             axios.get(myUrl).then((result) => {
