@@ -1,13 +1,13 @@
 <!-- JAVASCRIPT & VUE.JS -->
 <script>
+// IMPORTO STORE.JS
+import { store } from '../store.js';
+
 // IMPORTO APP_POKEMON_CARD
 import AppPokemonCard from './AppPokemonCard.vue';
 
 // IMPORTO APP_LOADER
 import AppLoader from './AppLoader.vue';
-
-// IMPORTO STORE.JS
-import { store } from '../store.js';
 
 export default {
     // OGGETTO COMPONENTS
