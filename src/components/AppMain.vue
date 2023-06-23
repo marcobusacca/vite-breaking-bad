@@ -24,6 +24,134 @@ export default {
             store,
         }
     },
+    methods: {
+        changeBackgroundCard(pokemon) {
+
+            // INSERISCO UNA VARIABILE CHE CONTERRA LA CLASSE DA APPLICARE
+            let classCard;
+
+            // L'UTENTE HA SELEZIONATO IL FILTRO "ALL"
+            if (store.typeSelected === 'All') {
+
+                // CONTROLLO IL TYPE DI OGNI POKEMON
+                switch (pokemon.type1) {
+
+                    // IL TIPO DEL POKEMON è "GRASS"
+                    case 'Grass':
+                        classCard = 'bg-grass';
+                        break;
+
+                    // IL TIPO DEL POKEMON è "FIRE"
+                    case 'Fire':
+                        classCard = 'bg-fire';
+                        break;
+
+                    // IL TIPO DEL POKEMON è "WATER"
+                    case 'Water':
+                        classCard = 'bg-water';
+                        break;
+                }
+
+            } else { // L'UTENTE HA SELEZIONATO UN FILTRO DIVERSO DA "ALL"
+
+                // CONTROLLO IL TYPE DI POKEMON SELEZIONATO DALL'UTENTE
+                switch (store.typeSelected) {
+
+                    // IL TIPO DEI POKEMON è "GRASS"
+                    case 'Grass':
+                        classCard = 'bg-grass';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "FIRE"
+                    case 'Fire':
+                        classCard = 'bg-fire';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "WATER"
+                    case 'Water':
+                        classCard = 'bg-water';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "BUG"
+                    case 'Bug':
+                        classCard = 'bg-bug';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "DARK"
+                    case 'Dark':
+                        classCard = 'bg-dark';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "DRAGON"
+                    case 'Dragon':
+                        classCard = 'bg-dragon';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "ELECTRIC"
+                    case 'Electric':
+                        classCard = 'bg-electric';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "FAIRY"
+                    case 'Fairy':
+                        classCard = 'bg-fairy';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "FIGHTING"
+                    case 'Fighting':
+                        classCard = 'bg-fighting';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "FLYING"
+                    case 'Flying':
+                        classCard = 'bg-flying';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "GHOST"
+                    case 'Ghost':
+                        classCard = 'bg-ghost';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "GROUND"
+                    case 'Ground':
+                        classCard = 'bg-ground';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "ICE"
+                    case 'Ice':
+                        classCard = 'bg-ice';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "NORMAL"
+                    case 'Normal':
+                        classCard = 'bg-normal';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "POISON"
+                    case 'Poison':
+                        classCard = 'bg-poison';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "PSYCHIC"
+                    case 'Psychic':
+                        classCard = 'bg-psychic';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "ROCK"
+                    case 'Rock':
+                        classCard = 'bg-rock';
+                        break;
+
+                    // IL TIPO DEI POKEMON è "STEEL"
+                    case 'Steel':
+                        classCard = 'bg-steel';
+                        break;
+                }
+
+            }
+            return classCard;
+        }
+    }
 }
 </script>
 
@@ -35,7 +163,7 @@ export default {
             <!-- Main Row -->
             <div class="row main-row" v-if="store.loading === false">
                 <!-- Main Col -->
-                <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class=" pokemon.type1 === 'Grass' ? 'bg-grass' : pokemon.type1 === 'Fire' ? 'bg-fire' : pokemon.type1 === 'Water' ? 'bg-water' : '' ">
+                <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class="changeBackgroundCard(pokemon)">
                     <AppPokemonCard :pokemon="pokemon"/>
                 </div>
             </div>
@@ -81,6 +209,70 @@ export default {
 
         .bg-water {
             background-color: $WaterColor;
+        }
+
+        .bg-bug {
+            background-color: $BugColor;
+        }
+
+        .bg-dark {
+            background-color: $DarkColor;
+            color: #fff;
+        }
+
+        .bg-dragon {
+            background-color: $DragonColor;
+            color: #fff;
+        }
+
+        .bg-electric {
+            background-color: $ElectricColor;
+        }
+
+        .bg-fairy {
+            background-color: $FairyColor;
+        }
+
+        .bg-fighting {
+            background-color: $FightingColor;
+            color: #fff;
+        }
+
+        .bg-flying {
+            background-color: $FlyingColor;
+        }
+
+        .bg-ghost {
+            background-color: $GhostColor;
+        }
+
+        .bg-ground {
+            background-color: $GroundColor;
+        }
+
+        .bg-ice {
+            background-color: $IceColor;
+        }
+
+        .bg-normal {
+            background-color: $NormalColor;
+        }
+
+        .bg-poison {
+            background-color: $PoisonColor;
+            color: #fff;
+        }
+
+        .bg-psychic {
+            background-color: $PsychicColor;
+        }
+
+        .bg-rock {
+            background-color: $RockColor;
+        }
+
+        .bg-steel {
+            background-color: $SteelColor;
         }
     }
 
