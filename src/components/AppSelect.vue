@@ -12,25 +12,34 @@ export default {
             // DICHIARO STORE.JS
             store,
         }
-    },
+    }
 }
 </script>
 
 <!-- TEMPLATE HTML -->
 <template lang="">
-    <!-- Type Select -->
-    <select name="type-select" id="type-select" class="form-select">
-        <option v-for="(type, index) in store.pokemonTypeList" :value="type" v-text="type"></option>
-    </select>
+    <!-- Type Col -->
+    <div class="col">
+        <!-- Type Select -->
+        <select name="type-select" id="type-select" class="form-select" v-model="store.typeSelected" @change="$emit('filter')">
+            <option value="All" selected>All</option>
+            <option v-for="(type, index) in store.pokemonTypeList" :value="type" v-text="type"></option>
+        </select>
+    </div>
 </template>
 
 <!-- STYLE SCSS -->
-<style lang="scss">
+<style lang="scss" scoped>
 // IMPORTO VARIABLES.SCSS
 @use '../styles/partials/variables' as *;
 
-#type-select {
-    width: 150px;
-    height: 50px;
+.col {
+    display: flex;
+    justify-content: flex-end;
+
+    #type-select {
+        width: 150px;
+        height: 50px;
+    }
 }
 </style>

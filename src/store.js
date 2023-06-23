@@ -7,6 +7,6 @@ export const store = reactive({
     typeApiUrl: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/types1',
     pokemonList: [],
     pokemonTypeList: [],
-    typeSelected: '',
+    typeSelected: 'All',
     loading: true,
 });
