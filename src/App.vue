@@ -36,6 +36,7 @@ export default {
     created() {
         // CHIAMATA API POKEMONS TYPE
         axios.get(store.typeApiUrl).then((result) => {
+
             // INSERISCO L'ARRAY DI OGGETTI DENTRO STORE.JS
             store.pokemonTypeList = result.data;
         });
@@ -45,6 +46,9 @@ export default {
     },
     methods: {
         getPokemon() {
+            // IMPOSTO LA VARIABILE LOADING SU TRUE
+            store.loading = true;
+
             // RECUPERO L'URL DELLA CHIAMATA API POKEMONS
             let myUrl = store.apiUrl;
 
