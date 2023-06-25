@@ -30,125 +30,100 @@ export default {
             // INSERISCO UNA VARIABILE CHE CONTERRA LA CLASSE DA APPLICARE
             let classCard;
 
-            // L'UTENTE HA SELEZIONATO IL FILTRO "ALL"
-            if (store.typeSelected === 'All') {
+            // CONTROLLO IL TYPE DEI POKEMONS
+            switch (pokemon.type1) {
 
-                // CONTROLLO IL TYPE DI OGNI POKEMON
-                switch (pokemon.type1) {
+                // IL TIPO DEI POKEMON è "GRASS"
+                case 'Grass':
+                    classCard = 'bg-grass';
+                    break;
 
-                    // IL TIPO DEL POKEMON è "GRASS"
-                    case 'Grass':
-                        classCard = 'bg-grass';
-                        break;
+                // IL TIPO DEI POKEMON è "FIRE"
+                case 'Fire':
+                    classCard = 'bg-fire';
+                    break;
 
-                    // IL TIPO DEL POKEMON è "FIRE"
-                    case 'Fire':
-                        classCard = 'bg-fire';
-                        break;
+                // IL TIPO DEI POKEMON è "WATER"
+                case 'Water':
+                    classCard = 'bg-water';
+                    break;
 
-                    // IL TIPO DEL POKEMON è "WATER"
-                    case 'Water':
-                        classCard = 'bg-water';
-                        break;
-                }
+                // IL TIPO DEI POKEMON è "BUG"
+                case 'Bug':
+                    classCard = 'bg-bug';
+                    break;
 
-            } else { // L'UTENTE HA SELEZIONATO UN FILTRO DIVERSO DA "ALL"
+                // IL TIPO DEI POKEMON è "DARK"
+                case 'Dark':
+                    classCard = 'bg-dark';
+                    break;
 
-                // CONTROLLO IL TYPE DI POKEMON SELEZIONATO DALL'UTENTE
-                switch (store.typeSelected) {
+                // IL TIPO DEI POKEMON è "DRAGON"
+                case 'Dragon':
+                    classCard = 'bg-dragon';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "GRASS"
-                    case 'Grass':
-                        classCard = 'bg-grass';
-                        break;
+                // IL TIPO DEI POKEMON è "ELECTRIC"
+                case 'Electric':
+                    classCard = 'bg-electric';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "FIRE"
-                    case 'Fire':
-                        classCard = 'bg-fire';
-                        break;
+                // IL TIPO DEI POKEMON è "FAIRY"
+                case 'Fairy':
+                    classCard = 'bg-fairy';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "WATER"
-                    case 'Water':
-                        classCard = 'bg-water';
-                        break;
+                // IL TIPO DEI POKEMON è "FIGHTING"
+                case 'Fighting':
+                    classCard = 'bg-fighting';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "BUG"
-                    case 'Bug':
-                        classCard = 'bg-bug';
-                        break;
+                // IL TIPO DEI POKEMON è "FLYING"
+                case 'Flying':
+                    classCard = 'bg-flying';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "DARK"
-                    case 'Dark':
-                        classCard = 'bg-dark';
-                        break;
+                // IL TIPO DEI POKEMON è "GHOST"
+                case 'Ghost':
+                    classCard = 'bg-ghost';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "DRAGON"
-                    case 'Dragon':
-                        classCard = 'bg-dragon';
-                        break;
+                // IL TIPO DEI POKEMON è "GROUND"
+                case 'Ground':
+                    classCard = 'bg-ground';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "ELECTRIC"
-                    case 'Electric':
-                        classCard = 'bg-electric';
-                        break;
+                // IL TIPO DEI POKEMON è "ICE"
+                case 'Ice':
+                    classCard = 'bg-ice';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "FAIRY"
-                    case 'Fairy':
-                        classCard = 'bg-fairy';
-                        break;
+                // IL TIPO DEI POKEMON è "NORMAL"
+                case 'Normal':
+                    classCard = 'bg-normal';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "FIGHTING"
-                    case 'Fighting':
-                        classCard = 'bg-fighting';
-                        break;
+                // IL TIPO DEI POKEMON è "POISON"
+                case 'Poison':
+                    classCard = 'bg-poison';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "FLYING"
-                    case 'Flying':
-                        classCard = 'bg-flying';
-                        break;
+                // IL TIPO DEI POKEMON è "PSYCHIC"
+                case 'Psychic':
+                    classCard = 'bg-psychic';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "GHOST"
-                    case 'Ghost':
-                        classCard = 'bg-ghost';
-                        break;
+                // IL TIPO DEI POKEMON è "ROCK"
+                case 'Rock':
+                    classCard = 'bg-rock';
+                    break;
 
-                    // IL TIPO DEI POKEMON è "GROUND"
-                    case 'Ground':
-                        classCard = 'bg-ground';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "ICE"
-                    case 'Ice':
-                        classCard = 'bg-ice';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "NORMAL"
-                    case 'Normal':
-                        classCard = 'bg-normal';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "POISON"
-                    case 'Poison':
-                        classCard = 'bg-poison';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "PSYCHIC"
-                    case 'Psychic':
-                        classCard = 'bg-psychic';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "ROCK"
-                    case 'Rock':
-                        classCard = 'bg-rock';
-                        break;
-
-                    // IL TIPO DEI POKEMON è "STEEL"
-                    case 'Steel':
-                        classCard = 'bg-steel';
-                        break;
-                }
-
+                // IL TIPO DEI POKEMON è "STEEL"
+                case 'Steel':
+                    classCard = 'bg-steel';
+                    break;
             }
+
             return classCard;
         }
     }
@@ -161,15 +136,31 @@ export default {
         <!-- Main Container -->
         <div class="container main-container">
             <!-- Main Row -->
-            <div class="row main-row" v-if="store.loading === false">
+            <div class="row main-row" v-if="store.loading === false && store.pokemonList.length !== 0">
                 <!-- Main Col -->
                 <div class="main-col" v-for="(pokemon, index) in store.pokemonList" :key="index" :class="changeBackgroundCard(pokemon)">
                     <AppPokemonCard :pokemon="pokemon"/>
                 </div>
             </div>
-            <!-- Main Row -->
-            <div class="row loader-row" v-else>
+            <!-- Loader Row -->
+            <div class="row loader-row" v-else-if="store.loading === true">
                 <AppLoader/>
+            </div>
+            <!-- Error Message Row Type 1 -->
+            <div class="row error-message-row" v-else-if="store.typeSelected !== 'All'">
+                <p>
+                    <span>Nessun Pokemon Trovato con nome</span>
+                    <strong>&nbsp;'{{store.nameSearched}}'&nbsp;</strong>
+                    <span>e tipo</span>
+                    <strong>&nbsp;'{{store.typeSelected}}'&nbsp;</strong>
+                </p>
+            </div>
+            <!-- Error Message Row Type 2 -->
+            <div class="row error-message-row" v-else>
+                <p>
+                    <span>Nessun Pokemon Trovato con nome</span>
+                    <strong>&nbsp;'{{store.nameSearched}}'&nbsp;</strong>
+                </p>
             </div>
         </div>
     </main>
@@ -281,5 +272,23 @@ export default {
         width: 100%;
         background: linear-gradient(115deg, rgba(0, 0, 0, 0.788) 0%, rgba(75, 81, 86, 1) 100%);
     }
+
+    .error-message-row {
+        width: 100%;
+        height: 50vh;
+        padding: 100px;
+        background: linear-gradient(115deg, rgba(255, 255, 255, 0.788) 0%, rgba(75, 81, 86, 0.596) 100%);
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        * {
+            font-size: 22px;
+        }
+    }
+
 }
 </style>

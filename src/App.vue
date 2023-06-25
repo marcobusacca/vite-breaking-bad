@@ -9,8 +9,8 @@ import { store } from './store.js';
 // IMPORTO APP_HEADER
 import AppHeader from './components/AppHeader.vue';
 
-// IMPORTO APP_SELECT
-import AppSelect from './components/AppSelect.vue';
+// IMPORTO APP_FILTER
+import AppFilter from './components/AppFilter.vue';
 
 // IMPORTO APP_MAIN
 import AppMain from './components/AppMain.vue';
@@ -21,8 +21,8 @@ export default {
         // DICHIARO APP_HEADER
         AppHeader,
 
-        // IMPORTO APP_SELECT
-        AppSelect,
+        // IMPORTO APP_FILTER
+        AppFilter,
 
         // DICHIARO APP_MAIN
         AppMain
@@ -52,11 +52,26 @@ export default {
             // RECUPERO L'URL DELLA CHIAMATA API POKEMONS
             let myUrl = store.apiUrl;
 
+            // CONTROLLO CHE L'UTENTE ABBIA INSERITO UNA STRINGA NEL CAMPO DI RICERCA NOME POKEMON
+            if (store.nameSearched !== '') {
+
+                // INSERISCO IL FILTRAGGIO SCELTO DALL'UTENTE NELL'URL DELLA CHIAMATA API POKEMONS
+                myUrl += `?start[name]=${store.nameSearched}`;
+            }
+
             // CONTROLLO CHE L'UTENTE ABBIA SELEZIONATO UN TIPO DIVERSO DA "ALL"
             if (store.typeSelected !== 'All') {
 
-                // INSERISCO IL FILTRAGGIO SCELTO DALL'UTENTE NELL'URL DELLA CHIAMATA API POKEMONS
-                myUrl += `?eq[type1]=${store.typeSelected}`;
+                // CONTROLLO CHE L'UTENTE ABBIA INSERITO UNA STRINGA NEL CAMPO DI RICERCA NOME POKEMON
+                if (store.nameSearched !== '') {
+
+                    // INSERISCO IL FILTRAGGIO SCELTO DALL'UTENTE NELL'URL DELLA CHIAMATA API POKEMONS
+                    myUrl += `&eq[type1]=${store.typeSelected}`;
+                } else {
+
+                    // INSERISCO IL FILTRAGGIO SCELTO DALL'UTENTE NELL'URL DELLA CHIAMATA API POKEMONS
+                    myUrl += `?eq[type1]=${store.typeSelected}`;
+                }
             }
             // CHIAMATA API POKEMONS
             axios.get(myUrl).then((result) => {
@@ -77,7 +92,7 @@ export default {
         <div class="container my-5">
             <div class="row">
                 <AppHeader/>
-                <AppSelect @filter="getPokemon"/>
+                <AppFilter @search="getPokemon" @filter="getPokemon"/>
             </div>
         </div>  
     </header>

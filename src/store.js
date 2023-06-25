@@ -8,5 +8,6 @@ export const store = reactive({
     pokemonList: [],
     pokemonTypeList: [],
     typeSelected: 'All',
+    nameSearched: '',
     loading: true,
 });
